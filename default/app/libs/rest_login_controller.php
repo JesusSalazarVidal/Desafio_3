@@ -13,7 +13,7 @@
  * @author kumbiaPHP Team
  */
 require_once CORE_PATH . 'kumbia/kumbia_rest.php';
-abstract class RestController extends KumbiaRest {
+abstract class RestLoginController extends KumbiaRest {
 
     /**
      * Inicialización de la petición
@@ -22,14 +22,7 @@ abstract class RestController extends KumbiaRest {
      * ****************************************
      */
     final protected function initialize() {
-        if((new Usuarios)->isAut()){
-            return true;
-        }else{
-            http_response_code(400);
-            $this->data = ['message'=> 'Error Credenciales invalidad', 'status' => 'Error', 'data' => null] ;
-            return false;
-      
-        }
+        
     }
 
     final protected function finalize() {

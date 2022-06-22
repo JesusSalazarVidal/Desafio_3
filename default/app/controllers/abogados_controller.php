@@ -1,5 +1,9 @@
 <?php
-    
-    class AbogadosController extends ScaffoldController{	
-          public $model ='abogados';
-    }
+      
+      class AbogadosController extends RestController{	
+            public function getAll(){
+                  #$this->data = ['respuesta' => ['message'=> 'ok', 'data' => null]] ;
+                  $this->data =(new Abogados())->find();
+      
+            }
+      }

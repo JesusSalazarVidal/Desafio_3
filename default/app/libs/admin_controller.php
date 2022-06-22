@@ -20,9 +20,11 @@ abstract class AdminController extends Controller
 
     final protected function initialize()
     {
-        //Código de auth y permisos
-        //Será libre, pero añadiremos uno por defecto en breve
-        //Posiblemente se cree una clase abstracta con lo que debe tener por defecto
+        if ((new Usuarios)->isAut()){
+            return true;
+        } else{
+            Redirect::to('login');
+        }
     }
 
     final protected function finalize()
