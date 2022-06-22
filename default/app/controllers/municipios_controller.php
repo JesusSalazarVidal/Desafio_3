@@ -4,8 +4,13 @@ class MunicipiosController extends RestController
 {
       public function getAll()
       {
-            #$this->data = ['respuesta' => ['message'=> 'ok', 'data' => null]] ;
-            $this->data = (new Municipios())->find();
+            $data = (new Municipios())->find();
+            if($data){
+                  $this->data = $data;
+            }else{
+                  $this->data = ['respuesta' => ['message'=> 'No hay registros', 'data' => null]] ;
+            }
+           
       }
       public function get($id)
       {
