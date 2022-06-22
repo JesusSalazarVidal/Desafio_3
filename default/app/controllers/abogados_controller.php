@@ -85,7 +85,8 @@ class AbogadosController extends RestController
       public function post_info()
       {
             
-            $data = (new Abogados())->get_alias();
+            $data = (new Abogados())->fields;
+            #$this-> fields = (new $this->model())->fields;
             $this->data = $data;
 
       }
